@@ -2,10 +2,7 @@ let
 
   moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
   nixpkgs = import <nixpkgs> { overlays = [ moz_overlay ]; };
-  latest = nixpkgs.rustChannelOf {
-    channel = "stable";
-    date = "2018-07-10";
-  };
+  latest = nixpkgs.latest.rustChannels.stable;
 
 in
 
